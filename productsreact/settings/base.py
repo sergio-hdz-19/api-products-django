@@ -1,18 +1,25 @@
 from pathlib import Path
 import environ
+from dotenv import load_dotenv
+import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from unipath import Path
 BASE_DIR = Path(__file__).ancestor(3)
 
-env = environ.Env()
+#env = environ.Env()
 # reading .env file
-environ.Env.read_env()
+#environ.Env.read_env()
 
+# Importa la función load_dotenv desde la biblioteca dotenv
+from dotenv import load_dotenv
+
+# Llama a load_dotenv para cargar las variables de entorno desde el archivo .env o example.env
+load_dotenv()
 
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # Application definition
