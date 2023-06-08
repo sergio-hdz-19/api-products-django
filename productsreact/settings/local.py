@@ -1,11 +1,19 @@
 from .base import *
 from storages.backends.s3boto3 import S3Boto3Storage
-import environ
+from dotenv import load_dotenv
+import os
+
+#import environ
+# Importa la función load_dotenv desde la biblioteca dotenv
+from dotenv import load_dotenv
+
+# Llama a load_dotenv para cargar las variables de entorno desde el archivo .env o example.env
+load_dotenv()
 
 
-env = environ.Env()
+#env = environ.Env()
 # reading .env file
-environ.Env.read_env()
+#environ.Env.read_env()
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -44,11 +52,11 @@ CORS_ALLOWED_ORIGINS=[
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': env('PORT'),
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT'),
     }
 }
 
@@ -66,10 +74,10 @@ STATIC_ROOT = 'static'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_S3_ACCESS_KEY_ID = env('AWS_S3_ACCESS_KEY_ID')
-AWS_S3_SECRET_ACCESS_KEY = env('AWS_S3_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-AWS_QUERYSTRING_AUTH = env('AWS_QUERYSTRING_AUTH')
+AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
+AWS_S3_SECRET_ACCESS_KEY = os.getenv('AWS_S3_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_QUERYSTRING_AUTH = os.getenv('AWS_QUERYSTRING_AUTH')
 
 
 MEDIA_URL = '/media/'
