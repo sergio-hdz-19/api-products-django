@@ -16,7 +16,6 @@ DEBUG = True
 ALLOWED_HOSTS = [
     
     "*",
-    'react-products-django-env.eba-iv7ujyit.us-west-2.elasticbeanstalk.com',
     
                  
 ]
