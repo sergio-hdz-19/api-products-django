@@ -19,7 +19,7 @@ load_dotenv()
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = '@8knj8%!vdbr*@ga^_l(n*5z8lsit4m3h^jd++z%9n7biwfiiw'
 
 
 # Application definition
