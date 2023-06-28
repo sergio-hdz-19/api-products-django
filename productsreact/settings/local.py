@@ -31,7 +31,7 @@ CORS_ALLOWED_ORIGINS=[
     'http://localhost:8000',
     'http://localhost:3000',
     'http://localhost:8080',
-
+    'https://main--api-products-django-react.netlify.app/'
 ]
 
 
@@ -70,7 +70,7 @@ DATABASES = {
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+##DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
 AWS_S3_SECRET_ACCESS_KEY = os.getenv('AWS_S3_SECRET_ACCESS_KEY')
