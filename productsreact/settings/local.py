@@ -23,7 +23,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
 
-    "*",
+    ".vercel.app",
 
 ]
 
@@ -69,6 +69,9 @@ DATABASES = {
 
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
+
+
+
 
 ##DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
